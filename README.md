@@ -1,4 +1,4 @@
-# LEDs_contropl
+# LEDs_matrix_control
 
 <!-- PROJECT LOGO -->
 <div align="center">
@@ -13,7 +13,7 @@ I wanted to create my own library by using a little bit of Python to control
 a matrix of leds. I'm using this matrix :
 <div>
   <a href="https://github.com/Altarax/LEDs_control">
-    <img src="https://ae01.alicdn.com/kf/H85b1bf698897475cb76c19e59c7bbd52P/Panneau-lumineux-num-rique-Flexible-LED-RGB-WS2812B-adressable-individuellement-Module-8x8-16x16-8x32-cran-matriciel.jpg_50x50.jpg_.webp" alt="Logo" width="160" height="160">
+    <img src="https://m.media-amazon.com/images/I/71eB9U0mmFL._AC_SX569_.jpg" alt="Logo" width="160" height="160">
   </a>
 </div>
 
