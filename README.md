@@ -17,7 +17,11 @@ a matrix of leds. I'm using this matrix :
 
 I had to create a tiny circuit to convert 3.3V to 5V to send data to the leds.
 I bought it on JLPCB after using EASY EDA to create it :
-![image](https://i.ibb.co/FX9ynXw/unnamed.png)
+<div align="center">
+  <a href="https://github.com/Altarax/Alarm_arduino">
+    <img src="https://i.ibb.co/FX9ynXw/unnamed.png" alt="Logo" width="160" height="160">
+  </a>
+</div>
 
 First of all, I'm using this code found here : http://stevenmerrifield.com/WS2812/index.html
 Thanks to this person because I'll be able to do my first tests to understand the WS2812B correctly.
