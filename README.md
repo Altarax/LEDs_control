@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/Altarax/Alarm_arduino">
+  <a href="https://github.com/Altarax/LEDs_control">
     <img src="https://user-images.githubusercontent.com/46035021/141173582-9912054c-fa62-45d8-a8dd-a964239d683d.png" alt="Logo" width="160" height="160">
   </a>
 </div>
@@ -11,15 +11,19 @@
 
 I wanted to create my own library by using a little bit of Python to control  
 a matrix of leds. I'm using this matrix :
-![image](https://ae01.alicdn.com/kf/H85b1bf698897475cb76c19e59c7bbd52P/Panneau-lumineux-num-rique-Flexible-LED-RGB-WS2812B-adressable-individuellement-Module-8x8-16x16-8x32-cran-matriciel.jpg_50x50.jpg_.webp)  
+<div>
+  <a href="https://github.com/Altarax/LEDs_control">
+    <img src="https://ae01.alicdn.com/kf/H85b1bf698897475cb76c19e59c7bbd52P/Panneau-lumineux-num-rique-Flexible-LED-RGB-WS2812B-adressable-individuellement-Module-8x8-16x16-8x32-cran-matriciel.jpg_50x50.jpg_.webp" alt="Logo" width="160" height="160">
+  </a>
+</div>
 
 ## Some specifications
 
 I had to create a tiny circuit to convert 3.3V to 5V to send data to the leds.
 I bought it on JLPCB after using EASY EDA to create it :
-<div align="center">
-  <a href="https://github.com/Altarax/Alarm_arduino">
-    <img src="https://i.ibb.co/FX9ynXw/unnamed.png" alt="Logo" width="160" height="160">
+<div>
+  <a href="https://github.com/Altarax/LEDs_control">
+    <img src="https://i.ibb.co/FX9ynXw/unnamed.png" alt="Logo" width="200" height="200">
   </a>
 </div>
 
