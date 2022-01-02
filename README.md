@@ -31,6 +31,7 @@ First of all, I'm using this code found here : http://stevenmerrifield.com/WS281
 Thanks to this person because I'll be able to do my first tests to understand the WS2812B correctly.
 
 (05/12 : currently waiting the PCB)
+(02/01 : PCB finally here ! But I don't find my resistors... In a few days I'll start the tests)
 
 ## Roadmap
 
