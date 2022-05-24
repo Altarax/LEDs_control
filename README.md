@@ -38,7 +38,10 @@ Thanks to this person because I'll be able to do my first tests to understand th
 
 ## Roadmap
 
-- [ ] First tests 
+- [x] First tests 
+- [ ] Python converter (Image -> RGB) 
+- [ ] Create a package for the variable LED
+- [ ] Create fonctions for LED (reset, add, modify)
 
 ## Me and programming langages (progression)
 - *05/12/2021* 
