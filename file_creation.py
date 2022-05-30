@@ -21,13 +21,17 @@ def create_pkg():
     file = open("led_ctrl_pkg.vhd", 'w')
     image = convert_image()    
     image_grb = bgr_to_grb(image)
-
+    
     pixels = []
 
-    for i in image_grb:
-        for j in i:
-            for length in range(0, len(j), 3):
-                pixels.append(rgb_to_hex_vhd(tuple(j[length:length+3])))
+    for i in range(32):
+        for j in range(8):
+            pixels.append(rgb_to_hex_vhd(tuple(i for i in image_grb[j][i])))
+
+    #for i in image_grb:
+    #    for j in i:
+    #        for length in range(0, len(j), 3):
+    #            pixels.append(rgb_to_hex_vhd(tuple(j[length:length+3])))
 
     file.write(
         f'''
@@ -98,13 +102,12 @@ def rgb_to_hex_vhd(rgb):
 
 def convert_image():
 
-    image = cv2.imread(IMAGE_NAME)
+    image_base = cv2.imread(IMAGE_NAME)
 
-    if not(len(image) > WIDTH*HEIGHT):
-        return cv2.imread(IMAGE_NAME)
+    if not(len(image_base) > WIDTH*HEIGHT):
+        return image_base
     else:
-        res = cv2.resize(image, dsize=(WIDTH, HEIGHT), interpolation=cv2.INTER_NEAREST)
-        return res
+        return cv2.resize(image_base, dsize=(WIDTH, HEIGHT), interpolation=cv2.INTER_NEAREST)
 
 def bgr_to_grb(img_bgr):
 
