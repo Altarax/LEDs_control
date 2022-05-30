@@ -1,15 +1,16 @@
 # Imports
 from datetime import date
+from email.mime import image
 from enum import auto
 from PIL import Image
 import cv2
 import numpy as np
 
 # Global Variables
-NB_OF_LEDS      = 256   #int
-WEIGHT 			= 8     #int
-HEIGHT			= 32    #int
-IMAGE_NAME      = "marvel.png"    #string
+NB_OF_LEDS      = 256         
+WIDTH 			= 8             
+HEIGHT			= 32            
+IMAGE_NAME      = "test.png"   
 
 DATE            = date.today()
 AUTHOR          = "Jayson Dangremont"
@@ -18,15 +19,12 @@ VERSION         = "1.0"
 
 def create_pkg():
     file = open("led_ctrl_pkg.vhd", 'w')
-
-    res = convert_image()
-    res_grb = bgr_to_grb(res)
-
-    print(res_grb)
+    image = convert_image()    
+    image_grb = bgr_to_grb(image)
 
     pixels = []
 
-    for i in res_grb:
+    for i in image_grb:
         for j in i:
             for length in range(0, len(j), 3):
                 pixels.append(rgb_to_hex_vhd(tuple(j[length:length+3])))
@@ -73,7 +71,7 @@ package led_ctrl_package is
     file.write(");")
 
     file.write('''
-	--! Functions declarations
+	\n\t--! Functions declarations
 	function reset_matrix(matrix : in LED_matrix_type) return LED_matrix_type;
 	
 end package led_ctrl_package;
@@ -99,9 +97,14 @@ def rgb_to_hex_vhd(rgb):
     return 'X"%02X%02X%02X"' % rgb
 
 def convert_image():
-    img_bgr = cv2.imread(IMAGE_NAME)
-    res = cv2.resize(img_bgr, dsize=(WEIGHT, HEIGHT), interpolation=cv2.INTER_NEAREST)
-    return res
+
+    image = cv2.imread(IMAGE_NAME)
+
+    if not(len(image) > WIDTH*HEIGHT):
+        return cv2.imread(IMAGE_NAME)
+    else:
+        res = cv2.resize(image, dsize=(WIDTH, HEIGHT), interpolation=cv2.INTER_NEAREST)
+        return res
 
 def bgr_to_grb(img_bgr):
 
