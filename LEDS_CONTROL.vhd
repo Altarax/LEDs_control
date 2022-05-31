@@ -40,7 +40,7 @@ architecture arch of LEDS_CONTROL is
 	constant RES : integer := 2500;
 
 	--! State machine types
-	type state_machine is (load, sending, send_bit, reset_state);
+	xtype state_machine is (load, sending, send_bit, reset_state);
 
    	--! Internal signal copied on output
    	signal sent_data_s  : std_logic;

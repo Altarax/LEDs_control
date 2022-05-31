@@ -1,4 +1,5 @@
 # Imports
+from audioop import reverse
 from datetime import date
 from email.mime import image
 from enum import auto
@@ -10,7 +11,7 @@ import numpy as np
 NB_OF_LEDS      = 256         
 WIDTH 			= 8             
 HEIGHT			= 32            
-IMAGE_NAME      = "test.png"   
+IMAGE_NAME      = "marvel.png"   
 
 DATE            = date.today()
 AUTHOR          = "Jayson Dangremont"
@@ -24,14 +25,22 @@ def create_pkg():
     
     pixels = []
 
+    temp_list = []
+    odd = 0
     for i in range(32):
-        for j in range(8):
-            pixels.append(rgb_to_hex_vhd(tuple(i for i in image_grb[j][i])))
+        if odd == 0:
+            for j in range(8):
+                pixels.append(rgb_to_hex_vhd(tuple(p for p in image_grb[j][i])))
+                odd = 1
+        else:
+            for j in range(8):
+                temp_list.append(rgb_to_hex_vhd(tuple(p for p in image_grb[j][i])))
 
-    #for i in image_grb:
-    #    for j in i:
-    #        for length in range(0, len(j), 3):
-    #            pixels.append(rgb_to_hex_vhd(tuple(j[length:length+3])))
+            for p in reversed(temp_list):
+                pixels.append(p)
+
+            temp_list.clear()
+            odd = 0   
 
     file.write(
         f'''
@@ -107,7 +116,8 @@ def convert_image():
     if not(len(image_base) > WIDTH*HEIGHT):
         return image_base
     else:
-        return cv2.resize(image_base, dsize=(WIDTH, HEIGHT), interpolation=cv2.INTER_NEAREST)
+        image_base = cv2.resize(image_base, dsize=(HEIGHT, WIDTH), interpolation=cv2.INTER_NEAREST)
+        return image_base
 
 def bgr_to_grb(img_bgr):
 
