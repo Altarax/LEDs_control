@@ -35,17 +35,22 @@ Thanks to this person because I'll be able to do my first tests to understand th
 (13/02 : Waiting for JTAG connector)  
 (21/03 : Started the first tests and nothing is working)  
 (24/05 : It's working ! Now I'll add another matrix and write a Python code to convert an image to a RGB matrix)  
+(31/05 : Done ! You can try it. I'll focus now on doing animation.)  
 
 ## Roadmap
 
 - [x] First tests 
-- [ ] Python converter (Image -> RGB) 
-- [ ] Create a package for the variable LED
-- [ ] Create fonctions for LED (reset, add, modify)
+- [x] Python converter (Image -> RGB) 
+- [x] Create a package for the variable LED
+- [x] Create fonctions for the matrix (reset, add, modify)
+
+## Tips
+If you want to use the 256 LEDs (basically if you want to use more than 30 LEDs) your power supply needs to be verified. If you use the 3 LEDs of the LED (yes, the WS2812B has 3 LEDs for each color) it's Itotal = 60mA*X (X = Number of LEDs). With 256 it's Itotal = 15A !!
+You need to use a laboratory power supply or a good power supply.
 
 ## Me and programming langages (progression)
-- *05/12/2021* 
+- *31/05/2021* 
 
 | VHDL                        | Python                      | C                           |
 |-----------------------------|-----------------------------|-----------------------------|
-|  ➖➖➖➖➖🚀➖➖➖🌑  |  ➖➖➖➖➖➖🚀➖➖🌑  |  ➖➖➖➖➖➖🚀➖➖🌑  |
+|  ➖➖➖➖➖➖🚀➖➖🌑  |  ➖➖➖➖➖🚀➖➖➖🌑  |  ➖➖➖➖➖➖🚀➖➖🌑  |

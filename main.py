@@ -1,7 +1,7 @@
 # Imports
-from file_creation import *
+from Python_scripts.file_creation import create_pkg
 
-# Functions
+# Main function
 def main():
     create_pkg()
 
